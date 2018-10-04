@@ -37,5 +37,5 @@ Entraremos con el **usuario** *pi* y la **contraseña** *raspberry*.
 ¡Ya estamos dentro! Ahora podremos configurar la raspi, para ello:
 
     $ sudo raspi-config
-Desde ahí podremos **activar SSH y VNC** (nos permite ver el escritorio de la raspi desde nuestro PC). Deberemos ir a la opción **5 Interfacing Options**.
+Desde ahí podremos **activar SSH** (necesario ya que en el siguiente reinicio el archivo creado para activar ssh es eliminado) y VNC** (nos permite ver el escritorio de la raspi desde nuestro PC). Deberemos ir a la opción **5 Interfacing Options**.
 También podemos configurar otras muchas cosas como el teclado, la contraseña, etc.
