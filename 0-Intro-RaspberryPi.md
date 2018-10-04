@@ -15,10 +15,27 @@ Para poder utilizar la **Raspberry Pi 2B** (de ahí en adelante *raspi*) necesit
 	- Elegimos la unidad de la MicroSD.
 	- Pulsamos *Write*.
 
-## Activar SSH (sin conectar nada a la *raspi*)
+## Manejar la raspi desde el PC. Activar SSH (sin conectar nada a la *raspi*)
+Para poder **manejar la *raspi* desde nuestro PC** con la terminal usaremos el protocolo SSH.
 Las nuevas versiones de Raspbian tienen **deshabilitado por seguridad SSH**.
 > Más info: https://www.raspberrypi.org/blog/a-security-update-for-raspbian-pixel/
 
 Para ello necesitaremos crear un fichero llamado **ssh** (este puede contener información o simplemente estar vacío) en la **partición boot de la MicroSD** 
 
 > [!] **No confundir con la carpeta boot**. Es una partición montada llamada boot. Debes crear el archivo en la raíz.
+
+## Acceder por SSH
+A continuación podremos acceder a la *raspi* por SSH. Podemos llegar a nuestro propósito usando directamente el **ejecutable ssh desde la terminal** o ayudarnos de una interfaz gráfica como **PuTTY**.
+Es importante conocer la **IP** de nuestra *raspi* y conocer que esta **podrá cambiar** a lo largo del tiempo. 
+
+> Una opción para comprobar cuál es la IP es conectarla al punto de acceso y mediante la configuración básica del AP (192.168.1.1 con privilegios de admin) podremos sacar la IP del equipo llamado raspeberry
+
+Entraremos con el **usuario** *pi* y la **contraseña** *raspberry*.
+> [!] **Es recomendable cambiar la contraseña.** https://www.raspberrypi.org/documentation/linux/usage/users.md
+
+## Configurando mi raspi por SSH
+¡Ya estamos dentro! Ahora podremos configurar la raspi, para ello:
+
+    $ sudo raspi-config
+Desde ahí podremos **activar SSH y VNC** (nos permite ver el escritorio de la raspi desde nuestro PC). Deberemos ir a la opción **5 Interfacing Options**.
+También podemos configurar otras muchas cosas como el teclado, la contraseña, etc.
