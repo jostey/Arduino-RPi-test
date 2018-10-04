@@ -15,8 +15,20 @@ A continuación vamos a instalar ROS en la *raspi* desde la terminal.
  2. **Instalamos ROS**
   
 	  `$ sudo apt-get update`
+	  
 	  `$ sudo apt-get install -y python-rosdep python-rosinstall-generator python-wstool python-rosinstall build-essential cmake`
+	  
 	  `$ sudo rosdep init`
+	  
 	  `$ rosdep update`
+	  
+	  `$ rosinstall_generator desktop_full --rosdistro melodic --deps --tar > melodic-desktop-full.rosinstall`
+	  
+	  `$ wstool init -j8 src melodic-desktop-full.rosinstall`
+	  
+	  `$ rosdep install --from-paths src --ignore-src --rosdistro melodic -y`
+	  
+	  `$ ./src/catkin/bin/catkin_make_isolated --install -DCMAKE_BUILD_TYPE=Release` 
+	  
 
 *(incompleto)*
